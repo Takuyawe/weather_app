@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { Providers } from "./providers";
+import { ColorSchemeScript } from "@mantine/core";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className="dark:bg-black">
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
-        <MantineProvider>{children}</MantineProvider>
+      <body className="dark:bg-black dark:text-white">
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

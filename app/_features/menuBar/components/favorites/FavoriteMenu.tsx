@@ -1,5 +1,8 @@
 import { Text } from "@mantine/core";
-import FavoriteCard from "./FavoriteCard";
+// import FavoriteCard from "./FavoriteCard";
+import dynamic from "next/dynamic";
+
+const FavoriteCard = dynamic(() => import("./FavoriteCard"), { ssr: false });
 
 const FavoriteMenu = () => {
   return (

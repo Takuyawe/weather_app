@@ -28,6 +28,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+body.dark {
+  --bg-color: #000000;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
