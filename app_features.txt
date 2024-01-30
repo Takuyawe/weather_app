@@ -1,0 +1,59 @@
+ツール
+typescript
+tailwindcss
+framer motion
+mantine
+jest
+supabase
+zustand
+prisma
+next.js
+next-themes
+openweatherapi
+zod
+draw.io
+
+これから追加する機能
+・天気情報を取得する間は、spinnerを表示
+・ログイン時に、zodでバリデーション
+・ダークモードとライトモード
+
+機能
+・ログイン機能
+・現在地の天気情報を表示
+・マップの特定の場所クリックで天気情報を取得
+・ユーザーがお気に入りの場所を保存できる
+・お気に入り欄の場所を用意
+・ダークモードとライトモード
+
+機能詳細
+表示する天気情報
+・(晴れ、曇り、雨)
+・湿度
+・風速
+
+特定の場所クリック
+・クリックしたところが真ん中に来るようにする
+・その地点の上にポップアップで天気を表示
+・ハートマークを使い、お気に入りに追加
+・ハートが押されたら、色を変更、再度押されたらお気に入りから削除する
+
+左側にツールバーを作る
+・アカウントボタン
+・お気に入りボタン
+・押されたら、左側にモーダルをスライド表示
+
+お気に入り欄
+・地名
+・天気情報を表示
+・移動ボタンを押したら、マップ上で遷移
+
+
+model Favorite_Location {
+  id            Int      @id @default(autoincrement())
+  location_name String
+  latitude      Int
+  longitude     Int
+  created_at    DateTime @default(now())
+  owner         String
+}
